@@ -1,93 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quotes by Some Great Minds</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
-      background: linear-gradient(to right, #ffecd2, #fcb69f);
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
       margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #1c1c1c, #3a3a3a);
+      color: #ffffff;
       text-align: center;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ff4d4d;
     }
     .quote-box {
-      max-width: 600px;
-      background: #ffffffcc;
+      margin-top: 40px;
+      background: #222;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: all 0.5s ease;
+      box-shadow: 0 0 20px rgba(255, 77, 77, 0.3);
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .quote {
       font-size: 1.6em;
-      margin-bottom: 15px;
+      font-style: italic;
+      margin-bottom: 20px;
     }
     .author {
       font-size: 1.2em;
-      color: #555;
+      font-weight: bold;
+      color: #ccc;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #888;
     }
   </style>
 </head>
 <body>
+
+  <h1>Hello Dear, this is Cyber</h1>
+  <p>You're entering the paradise of quotes by the greatest minds in history.</p>
+
   <div class="quote-box">
-    <div class="quote" id="quoteText"></div>
+    <div class="quote" id="quoteText">Loading quote...</div>
     <div class="author" id="quoteAuthor"></div>
   </div>
 
+  <footer>
+    Quotes auto-refresh every 4 seconds 🌙
+  </footer>
+
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const quotes = [
-        { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
-        { text: "In the middle of every difficulty lies opportunity.", author: "Albert Einstein" },
-        { text: "Do not go where the path may lead, go instead where there is no path and leave a trail.", author: "Ralph Waldo Emerson" },
-        { text: "To be, or not to be, that is the question.", author: "William Shakespeare" },
-        { text: "Life is what happens when you're busy making other plans.", author: "John Lennon" },
-        { text: "That which does not kill us makes us stronger.", author: "Friedrich Nietzsche" },
-        { text: "Success is not final, failure is not fatal: It is the courage to continue that counts.", author: "Winston Churchill" },
-        { text: "No one can make you feel inferior without your consent.", author: "Eleanor Roosevelt" },
-        { text: "The only thing we have to fear is fear itself.", author: "Franklin D. Roosevelt" },
-        { text: "The unexamined life is not worth living.", author: "Socrates" },
-        { text: "We accept the love we think we deserve.", author: "Stephen Chbosky" },
-        { text: "Love all, trust a few, do wrong to none.", author: "William Shakespeare" },
-        { text: "It always seems impossible until it’s done.", author: "Nelson Mandela" },
-        { text: "You must be the change you wish to see in the world.", author: "Mahatma Gandhi" },
-        { text: "Happiness depends upon ourselves.", author: "Aristotle" },
-        { text: "A man is but what he knows.", author: "Francis Bacon" },
-        { text: "Reality is wrong, dreams are for real.", author: "Tupac Shakur" },
-        { text: "If you want to shine like a sun, first burn like a sun.", author: "A. P. J. Abdul Kalam" },
-        { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius" },
-        { text: "A room without books is like a body without a soul.", author: "Cicero" },
-        { text: "I have not failed. I've just found 10,000 ways that won't work.", author: "Thomas Edison" },
-        { text: "The purpose of our lives is to be happy.", author: "Dalai Lama" },
-        { text: "Knowing yourself is the beginning of all wisdom.", author: "Aristotle" },
-        { text: "I think, therefore I am.", author: "René Descartes" },
-        { text: "To live is the rarest thing in the world. Most people exist, that is all.", author: "Oscar Wilde" },
-        { text: "Turn your wounds into wisdom.", author: "Oprah Winfrey" },
-        { text: "I rebel, therefore I exist.", author: "Albert Camus" },
-        { text: "You only live once, but if you do it right, once is enough.", author: "Mae West" },
-        { text: "Injustice anywhere is a threat to justice everywhere.", author: "Martin Luther King Jr." },
-        { text: "Everything you can imagine is real.", author: "Pablo Picasso" }
-      ];
+    const quotes = [
+      { text: "The wound is the place where the Light enters you.", author: "Rumi" },
+      { text: "I want to be with those who know secret things or else alone.", author: "Rainer Maria Rilke" },
+      { text: "Man only likes to count his troubles; he doesn't calculate his happiness.", author: "Fyodor Dostoevsky" },
+      { text: "I am a forest, and a night of dark trees: but he who is not afraid of my darkness, will find banks full of roses under my cypresses.", author: "Friedrich Nietzsche" },
+      { text: "I rebel; therefore I exist.", author: "Albert Camus" },
+      { text: "I talk to God but the sky is empty.", author: "Sylvia Plath" },
+      { text: "We are all in the gutter, but some of us are looking at the stars.", author: "Oscar Wilde" },
+      { text: "Life is not a problem to be solved, but a reality to be experienced.", author: "Søren Kierkegaard" },
+      { text: "You must have chaos within you to give birth to a dancing star.", author: "Friedrich Nietzsche" },
+      { text: "Don't grieve. Anything you lose comes round in another form.", author: "Rumi" },
+      { text: "To love is to suffer. To avoid suffering one must not love.", author: "Woody Allen" },
+      { text: "One must still have chaos in oneself to be able to give birth to a dancing star.", author: "Nietzsche" },
+      { text: "Blessed are the hearts that can bend; they shall never be broken.", author: "Albert Camus" },
+      { text: "I am not afraid of storms, for I am learning how to sail my ship.", author: "Louisa May Alcott" },
+      { text: "I am a part of all that I have met.", author: "Alfred Lord Tennyson" },
+      { text: "You were born with wings, why prefer to crawl through life?", author: "Rumi" },
+      { text: "Even the darkest night will end and the sun will rise.", author: "Victor Hugo" },
+      { text: "I took a deep breath and listened to the old brag of my heart: I am, I am, I am.", author: "Sylvia Plath" },
+      { text: "Reality is wrong, dreams are for real.", author: "Tupac Shakur" },
+      { text: "People demand freedom of speech as a compensation for the freedom of thought which they seldom use.", author: "Kierkegaard" },
+      { text: "The only way to deal with an unfree world is to become so absolutely free that your very existence is an act of rebellion.", author: "Albert Camus" },
+      { text: "The deeper that sorrow carves into your being, the more joy you can contain.", author: "Kahlil Gibran" },
+      { text: "A man is what he hides.", author: "André Malraux" },
+      { text: "Be like a tree and let the dead leaves drop.", author: "Rumi" },
+      { text: "I became insane, with long intervals of horrible sanity.", author: "Edgar Allan Poe" },
+      { text: "Hope is the thing with feathers that perches in the soul.", author: "Emily Dickinson" },
+      { text: "I would always rather be happy than dignified.", author: "Charlotte Brontë" },
+      { text: "We are each our own devil, and we make this world our hell.", author: "Oscar Wilde" },
+      { text: "You cannot swim for new horizons until you have courage to lose sight of the shore.", author: "William Faulkner" },
+      { text: "And so it goes.", author: "Kurt Vonnegut" }
+    ];
 
-      let index = 0;
-      const quoteText = document.getElementById("quoteText");
-      const quoteAuthor = document.getElementById("quoteAuthor");
+    let index = 0;
 
-      function showQuote() {
-        quoteText.textContent = "${quotes[index].text}";
-        quoteAuthor.textContent = – ${quotes[index].author};
-        index = (index + 1) % quotes.length;
-      }
+    function showQuote() {
+      const quote = quotes[index];
+      document.getElementById("quoteText").innerText = "${quote.text}";
+      document.getElementById("quoteAuthor").innerText = — ${quote.author};
+      index = (index + 1) % quotes.length;
+    }
 
-      showQuote(); // Show the first quote
-      setInterval(showQuote, 4000); // Change quote every 4 seconds
-    });
+    showQuote();
+    setInterval(showQuote, 4000); // every 4 seconds
   </script>
+
 </body>
 </html>
